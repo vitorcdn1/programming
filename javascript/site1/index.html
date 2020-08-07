@@ -1,1 +1,60 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>This is a teste for site 1</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hey</h1>
+	<h1 id="hello"></h1>
+	<button onclick="teste_function()">This is a test button</button>
+</body>
+<script>
+	var teste = window.confirm("Are Vitor Nascimento Batista")
+
+	window.alert(teste)
+
+	if (teste == true){
+		var pass = String(window.prompt("Let say that you are vitor so you should know his password: "))
+
+		if (pass == "vitorteste"){
+			window.alert("Congrats you are really vitor")
+			document.getElementById("hello").innerHTML = "vitor"
+		}
+		else{
+			window.alert("Get Out of here")
+		}
+	}
+	else{
+		window.alert("hello")
+	}
+
+	function teste_function(){
+		var new_array = []
+		var sair = true
+		var increase = 0
+
+		while (sair != false){
+			sair = window.prompt("Digite um nome: ")
+			if (sair != "sair"){
+				new_array[increase] = sair
+				increase += 1
+			}
+			else{
+				sair = false
+
+				for (x in new_array){
+					document.write(new_array[x])
+				}
+			}
+		}
+	}
+</script>
+</html>

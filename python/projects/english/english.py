@@ -2,7 +2,7 @@ from tkinter import *
 from os import chdir
 
 root = Tk()
-root.title("English")
+	root.title("English")
 
 # Widgets
 work_place_label = Label(root, text="Path place: ")
