@@ -1,25 +1,41 @@
 from tkinter import *
-from os import chdir
+from os import chdir, system
 
-def create_new_window(menssage="Do you want to create a new window",):
+def create_new_window(menssage="Do you want to create a new window",): # Create a new window
+
+	def Create_file(FileName="teste.txt"):
+
+		arquivo = open(FileName, "w")
+		arquivo.close()
 
 	window = Toplevel()
 	window.title("Create a new File")
 
 	text = Label(window, text=menssage)
-	button_confirm = Button(window, text="Confirm")
+	button_confirm = Button(window, text="Confirm", command= lambda: Create_file(".default.txt"))
 	button_cancel = Button(window, text="Cancel", command= window.quit)
-	
 
+	button_cancel.grid(row=1,column=0)
+	button_confirm.grid(row=1, column=2)
 	text.grid(row=0, column=0,columnspan=3)
 
-def current():
+def current_path():
 	try:
-		arquivo = open(".default", r+)
+		arquivo = open(".default", "r+")
+
+		content = arquivo.readlines()
+
+		if len(content) > 5:
+			chdir(content)
+
+		system("ls")
 
 	except:
 		default_path = "/home/vitor/"
-		arquivo = open(".default.txt", "w")
+		
+		create_new_window("The config file \".default.txt\" does't exit do you want to create")
+
+
 
 root = Tk()
 root.title("English")
