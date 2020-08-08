@@ -8,6 +8,22 @@
 			background-color: black;
 			color: white;
 			text-align: center;
+			font-size: 30pt;
+		}
+		button {
+			background-color: grey;
+			color: white;
+			margin-top: 20px;
+			font-size: 30pt;
+			border: 5px solid green;
+			border-radius: 50px;
+			padding: 10px;
+		}
+		button:hover {
+			opacity: 0.5;
+			background-color: green;
+			border-color: white;
+			color: black;
 		}
 	</style>
 </head>
@@ -15,26 +31,32 @@
 	<h1>Hey</h1>
 	<h1 id="hello"></h1>
 	<button onclick="teste_function()">This is a test button</button>
+	<br>
+	<button onclick="button_for_learning1()">This is a button for testing purposes</button>
+	<br>
+	<button onclick="button_for_learning2()">This is a second button for learning purposes</button>
 </body>
 <script>
-	var teste = window.confirm("Are Vitor Nascimento Batista")
+	function hey(){
+		var teste = window.confirm("Are Vitor Nascimento Batista")
 
-	window.alert(teste)
+		window.alert(teste)
 
-	if (teste == true){
-		var pass = String(window.prompt("Let say that you are vitor so you should know his password: "))
+		if (teste == true){
+			var pass = String(window.prompt("Let say that you are vitor so you should know his password: "))
 
-		if (pass == "vitorteste"){
-			window.alert("Congrats you are really vitor")
-			document.getElementById("hello").innerHTML = "vitor"
+			if (pass == "vitorteste"){
+				window.alert("Congrats you are really vitor")
+				document.getElementById("hello").innerHTML = "vitor"
+			}
+			else{
+				window.alert("Get Out of here")
+			}
 		}
 		else{
-			window.alert("Get Out of here")
+			window.alert("hello")
 		}
-	}
-	else{
-		window.alert("hello")
-	}
+}
 
 	function teste_function(){
 		var new_array = []
@@ -44,8 +66,8 @@
 		while (sair != false){
 			sair = window.prompt("Digite um nome: ")
 			if (sair != "sair"){
-				new_array[increase] = sair
-				increase += 1
+				new_array[new_array.length] = sair.concat("<br>")
+				
 			}
 			else{
 				sair = false
@@ -56,5 +78,55 @@
 			}
 		}
 	}
+
+	function button_for_learning1(){
+
+		var question1 = window.confirm("Do you want that or not:")
+		var question2 = window.confirm("Second Do you want that or not:")
+
+		if (question1 == false && question2 == false){
+			window.alert("all the options are false")
+		}
+		else if (question1 == true && question2 == true){
+			window.alert("all the options are true")
+		}
+		else if (question1 == false && question2 == true){
+			window.alert("question1 is false and question2 is true")
+		}
+		else if (question2 == false && question1 == true){
+			window.alert("question1 is true and question2 is false")
+		}
+	}
+
+	function button_for_learning2(){
+		try {
+			windowns.alert("hey")
+		}
+		catch (error){
+			// throw "that is a error"
+
+			window.alert("deu um erro ".concat(error.mensage))
+		}
+		finally {
+			window.alert("that message was write in finally block")
+		}
+	}
+
+	function button_for_learning3(){
+		window.alert("button_for_learning3")
+	}
+	function just_declaring_a_variable(){
+		let variable_teste = "heyllo"
+	}
+
+
+	{
+		var vitornascimento = "vitor"
+	}
+
+	var meunome = "arduino"
+
+	window.meunome
+	console.log(vitornascimento)
 </script>
 </html>
