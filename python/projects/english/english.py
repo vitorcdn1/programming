@@ -39,8 +39,21 @@ def current_path():
 
 
 def save_file():
-
+	
 	content = file_text_area.get("1.0", END)
+	arquivo = open(file_path, "r+")
+	arquivo.writelines(content)
+	arquivo.close()
+
+def open_file():
+	try:
+		arquivo = open(file_path.get(), "r+")
+		content = arquivo.readlines()
+		arquivo.close()
+
+	except:
+		creat_new_window(f"The file {file_path.get()} does't exit do you want to create")
+
 	
 
 root = Tk()
@@ -49,6 +62,7 @@ root.title("English")
 # Widgets
 work_place_label = Label(root, text="Path place: ")
 work_place_entry = Entry(root)
+file_path = Entry(root)
 file_text_area = Text(root, width=50, height=20)
 button_save = Button(root, text="Save that file", command= save_file)
 
@@ -56,6 +70,7 @@ button_save = Button(root, text="Save that file", command= save_file)
 #Position
 work_place_label.grid(row=0, column=0)
 work_place_entry.grid(row=0, column=1)
+file_path.grid(row=,column=)
 file_text_area.grid(row=2, column=0, columnspan=2)
 button_save.grid(row=1,column=0)
 
