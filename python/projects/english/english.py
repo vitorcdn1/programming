@@ -51,6 +51,8 @@ def open_file():
 		content = arquivo.readlines()
 		arquivo.close()
 
+		file_text_area.insert(END, content)
+
 	except:
 		creat_new_window(f"The file {file_path.get()} does't exit do you want to create")
 
