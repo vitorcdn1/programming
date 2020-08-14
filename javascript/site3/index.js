@@ -1,21 +1,32 @@
 function readoption(question="write a number: ",array_list=[]){
 
+	var array_numbers;
+
+	if (array_list == []){
+
+		for (var c = 0;c < array_list.length;c++){
+			array_numbers[c] = c
+		}
+	}
+
+	
 	while (true){
 
 		var response = Number(window.prompt("Write a number: "))
 
-		if (Number.isInteger(response) == true && response in array_list){
+		if (Number.isInteger(response) == true && response in array_numbers){
 			return response
 		}
-		if (array_list == [] && Number.isinteger(reponse) == true){
+		
+		else {
+			if (Number.isInteger(response) == false){
+				window.alert("Please write a integer number !!")
+			}
+			if (response in array_numbers == false){
+				window.alert("Please write a number in the options")
+			}
 
-			return response
 		}
-		if (response == NaN){
-				
-			window.alert("Please write a integer number !!")
-		}
-
 	}
 }
 
