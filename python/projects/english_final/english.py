@@ -1,12 +1,18 @@
 from tkinter import *
+from english_functions.path_fun import check_if_default_file_exist
 
 
 root = Tk()
-root.geometry(("700x500"))
 root.title("English")
 
 def search():
 	print("search()")
+
+	try:
+		arquivo = open(entry_search.get())
+		arquivo.close()
+	except:
+		print("error")
 
 def edit():
 	print("edit()")
@@ -25,10 +31,12 @@ entry_search = Entry(root)
 
 entry_search.grid(row=0,column=0,columnspan=2)
 text.grid(row = 2, column = 0 , columnspan = 3)
+
 # Button position
 
-button_exit.grid(row=3,column=1)
-button_search.grid(row=1,column=0)
-button_edit.grid(row=1,column=1)
+button_exit.grid(row=3,column=0, pady = 20)
+button_search.grid(row=1,column=0, pady = 20)
+button_edit.grid(row=1,column=1, pady = 20)
 
+root.after(1000, check_if_default_file_exist())
 root.mainloop()

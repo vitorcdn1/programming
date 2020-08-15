@@ -4,14 +4,14 @@ from pyautogui import prompt
 from os import chdir, mkdir, system, getcwd, listdir
 from getpass import getuser
 
-def check_if_default_file_exit():
+def check_if_default_file_exist():
 
     current_path = getcwd()
 
     content = listdir()
     
     if ".default.txt" not in content:
-        response = showinfo(title=".default.txt",message="The file \".default.txt\" does't exit\n Do you want to creat it")
+        response = showinfo(title=".default.txt",message="The file \".default.txt\" does't exit")
         
         while True:
 
@@ -33,5 +33,5 @@ def check_if_default_file_exit():
 def write_changes(content, file):
     pass
 
-check_if_default_file_exit()
+check_if_default_file_exist()
 
