@@ -40,7 +40,15 @@ def edit():
 
 		arquivo.close()
 	except:
+
+		showwarning(title="Edit" ,message=f"The file {entry_search.get()} will be created and ready for edit")
+		arquivo = open(entry_search.get(), "w")
+		arquivo.close()
 		print("erro")
+
+def save():
+
+	pass
 # Label
 
 #Button
@@ -48,8 +56,10 @@ def edit():
 button_exit = Button(root, text = "Exit the program",command = root.quit)
 button_search = Button(root, text = "Search", command = search)
 button_edit = Button(root, text = "Edit", command = edit)
+button_save = Button(root, text="Save", command= save)
 
 # Input
+
 text = Text(root, height=20, width=80)
 entry_search = Entry(root)
 
