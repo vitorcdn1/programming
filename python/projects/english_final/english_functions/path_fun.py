@@ -27,6 +27,7 @@ def check_if_default_file_exist():
         arquivo.close()
 
         chdir(file_path)
+        print("hey")
 
         system("pwd")
 
