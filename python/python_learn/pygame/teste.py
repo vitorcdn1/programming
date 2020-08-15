@@ -1,23 +1,20 @@
 import pygame
 
-pygame.init()
+size = [800, 600]
 
-size = (800,800)
+displaygame = pygame.display.set_mode(size)
 
-display_game = pygame.display.set_mode(size)
-
-pygame.display.set_caption("Vitor")
+pygame.display.set_caption("My game")
 
 close = True
-while close:
 
+clock = pygame.time.Clock()
+
+while close:
+	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			close = False
 
-
 	print(event)
-
-		
-
-	
+	clock.tick(60)
