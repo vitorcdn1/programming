@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter.messagebox import showwarning
+from tkinter.messagebox import showwarning, showinfo
 from os import getcwd
 
 root = Tk()
@@ -7,6 +7,8 @@ root.title("English")
 
 
 def search():
+
+	text.config(state=NORMAL)
 	print("search()")
 
 	try:
@@ -19,13 +21,15 @@ def search():
 		for c in content:
 			text.insert(END, c)
 
-		text.config(state=DISABLED)
-
 	except:
 		showwarning(title=f"word {entry_search.get()}",message=f"word {entry_search.get()} does't exist")
 		print("error")
 
+	text.config(state=DISABLED)
+
 def edit():
+	text.config(state = NORMAL)
+
 	print("edit()")
 
 	text.delete(1.0, END)
@@ -48,7 +52,15 @@ def edit():
 
 def save():
 
-	pass
+	content = text.get(1.0, END)
+
+	arquivo = open(entry_search.get(), "r+")
+
+	arquivo.writelines(content)
+
+	arquivo.close()
+
+	showinfo(title="save", message="file saved")
 # Label
 
 #Button
@@ -73,5 +85,6 @@ text.grid(row = 2, column = 0 , columnspan = 3)
 button_exit.grid(row=3,column=0, pady = 20)
 button_search.grid(row=1,column=0, pady = 20)
 button_edit.grid(row=1,column=1, pady = 20)
+button_save.grid(row=0, column=3)
 
 root.mainloop()
