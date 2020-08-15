@@ -1,5 +1,5 @@
 from tkinter import *
-from english_functions.path_fun import *
+from tkinter.messagebox import showwarning
 from os import getcwd
 
 root = Tk()
@@ -9,23 +9,38 @@ root.title("English")
 def search():
 	print("search()")
 
-	arquivo = open(".default.txt", "w")
-	chdir(arquivo.readlines())
-	arquivo.close()
 	try:
-		root.title(entry_search.get())
-		arquivo = open(entry_search.get())
-		
+
+		text.delete(1.0, END)
+		arquivo = open(entry_search.get(), "r")
 		content = arquivo.readlines()
 		arquivo.close()
 
-		print(content)
+		for c in content:
+			text.insert(END, c)
+
+		text.config(state=DISABLED)
+
 	except:
-		print(f"The file {entry_search.get()} does't exist")
+		showwarning(title=f"word {entry_search.get()}",message=f"word {entry_search.get()} does't exist")
+		print("error")
 
 def edit():
 	print("edit()")
 
+	text.delete(1.0, END)
+
+	try:
+		arquivo = open(entry_search.get(), "r+")
+
+		content = arquivo.readlines()
+
+		for c in content:
+			text.insert(END, C)
+
+		arquivo.close()
+	except:
+		print("erro")
 # Label
 
 #Button
@@ -48,7 +63,5 @@ text.grid(row = 2, column = 0 , columnspan = 3)
 button_exit.grid(row=3,column=0, pady = 20)
 button_search.grid(row=1,column=0, pady = 20)
 button_edit.grid(row=1,column=1, pady = 20)
-
-root.after(1000, check_if_default_file_exist())
 
 root.mainloop()

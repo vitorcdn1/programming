@@ -6,6 +6,7 @@ from getpass import getuser
 
 def check_if_default_file_exist():
 
+    print("oi vitor")
     current_path = getcwd()
 
     content = listdir()
@@ -18,10 +19,11 @@ def check_if_default_file_exist():
             try:
                 file_path = prompt(text="Write the default directory",title="default work directory")
                 listdir(file_path)
+                chdir(file_path)
                 break
             except:
                 showerror(title="Error The path {file_path} does't !!")
-
+    
         arquivo = open(".default.txt", "w")
         arquivo.writelines(file_path)
         arquivo.close()
