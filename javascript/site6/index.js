@@ -5,7 +5,9 @@ function ChangeSomething(){
         var thesomething = document.getElementsByTagName("p")
 
         
-        window.alert(thesomething[0].innerHTML)
+        for (x in thesomething){
+                console.log(thesomething[x].innerHTML)
+        }
 
         for (var x = 0;x < thesomething.length;x++){
 
@@ -46,3 +48,19 @@ function ChangeTest(){
 
         console.log(image)
 }
+
+function MouseIsOver(){
+
+        console.log("The Mouse is over")
+        var change = document.getElementsByTagName("p")[0].style.color
+
+        console.log(change)
+}
+
+function MouseOut(){
+        console.log("The Mouse is Out")
+}
+
+var id_button = document.getElementById("result")
+
+id_button.addEventListener("keydown", ChangeImage)

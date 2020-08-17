@@ -20,7 +20,6 @@
                                 color: lawngreen;
                                 background-color: grey;
                                 font-size: 30pt;
-
                         }
                         button {
                                 margin: 20px;
@@ -43,6 +42,9 @@
                                 border-color: yellow;
                                 opacity: 0.8;
                         }
+                        div {
+                                background-color: yellowgreen;
+                        }
                 </style>
         </head>
         <body>
@@ -53,15 +55,19 @@
 
             <hr>
 
+            <div onmouseover="MouseIsOver()">
+                    <h1>Hello</h1>
+            </div>
+
             <h1 id="result">Python Image</h1>
 
             <button onclick="ChangeSomething()">This is a test button</button>
 
             <br>
-            <button onclick="ChangeImage()" >Change The Image To a python image</button>
+            <button onmouseover="MouseIsOver()" onclick="ChangeImage()" >Change The Image To a python image</button>
             <br>
 
-            <img id="ThisIsTheImageId" src="TheSecondImage.jpeg">
+            <img onmouseover="ChangeImage()" onmouseout="MouseOut()" onclick="ChangeImage()" id="ThisIsTheImageId" src="TheSecondImage.jpeg">
 
         </body>
 
