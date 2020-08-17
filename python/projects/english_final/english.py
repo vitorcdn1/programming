@@ -1,7 +1,11 @@
 from tkinter import *
 from tkinter.messagebox import showwarning, showinfo
 from os import getcwd
+<<<<<<< Updated upstream
 
+=======
+ 
+>>>>>>> Stashed changes
 root = Tk()
 root.title("English")
 
@@ -34,6 +38,10 @@ def edit():
 
 	text.delete(1.0, END)
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	try:
 		arquivo = open(entry_search.get(), "r+")
 
