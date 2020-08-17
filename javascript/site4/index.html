@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <style>
+
+        </style>
+    </head>
+<body>
+
+    <h2>JavaScript Can Validate Input</h2>
+
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="num" type="text">
+
+    <button onclick="check()">Submit</button>
+
+    <p id="result"></p>
+
+</body>
+<script>
+
+    function check(){
+        var product = document.getElementById("num").value
+        var result = document.getElementById("result")
+
+        if (Number(product) == NaN || Number(product) < 0 || Number(product) > 10){
+            result.innerHTML = "Input OK"
+        }
+        else{
+            result.innerHTML = "Input not valid"
+        }
+
+    }
+
+</script>
+</html>
