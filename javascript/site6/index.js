@@ -61,6 +61,10 @@ function MouseOut(){
         console.log("The Mouse is Out")
 }
 
-var id_button = document.getElementById("result")
+function TestEvent(){
+        window.alert("hello you press a button")
+}
 
-id_button.addEventListener("keydown", ChangeImage)
+var id_teste = document.getElementById("")
+
+window.addEventListener("keypress", TestEvent)

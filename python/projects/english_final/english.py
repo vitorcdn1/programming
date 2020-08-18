@@ -37,11 +37,6 @@ def edit():
 	print("edit()")
 
 	text.delete(1.0, END)
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 	try:
 		arquivo = open(entry_search.get(), "r+")
 
