@@ -1,0 +1,16 @@
+body {
+        background-image: url("teste.jpg");
+        background-image: no-repeat;
+        color: white;
+        text-align: center;
+}
+#demo {
+        background-color: black;
+        color: white;
+}
+div{
+        background-color: pink;
+        border: 2px solid orangered;
+        border-radius: 30px;
+        padding: 5px;
+}
