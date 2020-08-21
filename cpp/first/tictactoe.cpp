@@ -1,28 +1,23 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int check(){
-	
-	int tictac[9] = {}
+string draw(string position){
 
-	for (int c = 0;c < 9;c++){
+	cout <<   position[0] << " | " << position[1] << " | " << position[2]  << endl;
+	cout << "__|___|__ " << endl;
+ 	cout << "4 | 5 | 6 " << endl;
+ 	cout << "__|___|__ " << endl;
+ 	cout << "7 | 8 | 9 " << endl;
 
-		}
-	}
+	return 0;
 }
 
 int main(){
 
-	for (int x = 0;x < 9;x++){
+	string teste[5] = {"x","o","x"};
 
-		int player1_position, player2_position;
-
-		cout << "Player 1 = x: ";
-		cin >> player1_position;
-		cout << "Player 2 = o: ";
-		cin >> player1_position;
-
-		
-	}
+	draw(teste);
+	return 0;
 }
