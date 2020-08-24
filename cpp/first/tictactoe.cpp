@@ -16,10 +16,10 @@ string draw(string position){
 
 int main(){
 
-	string teste = {'x','o','x',
-			'o','x','o',
-			'x','o','x'};
+	string teste = {1,2,3,
+			4,5,6,
+			7,8,9};
 
+	
 	draw(teste);
-	return 0;
 }
