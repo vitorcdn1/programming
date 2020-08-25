@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+        <head>
+                <meta charset="utf-8">
+                <title>Encrypted</title>
+                <style>
+                        body {
+                                background-color: black;
+                                color: greenyellow;
+                                text-align: center;
+                        }
+                </style>
+        </head>
+<body>
+        <input onkeyup="ReadInformation()" id="input" type="text">
+        <h1 id="result">Result</h1>
+</body>
+<script>
+function ReadInformation(){
+        var word = document.getElementById("input").value
+        var result = document.getElementbyId("result")
+        var alphabeto = "abcdefghijklmnopqrstuvwxyz".toUpperCase
+
+        window.alert(alphabeto)
+}
+</script>
+</html>
