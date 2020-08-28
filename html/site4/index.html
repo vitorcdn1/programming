@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-nr">
         <head>
+                <title>Table</title>
                 <meta charset="utf-8">
-                <title>Encrypted</title>
                 <style>
                         body {
-                                background-color: black;
-                                color: greenyellow;
                                 text-align: center;
+                                background-color:aqua;
+                        }
+                        table, td, th {
+                                padding: 20px;
+                                font-size: 20pt;
+                                border: 2px solid black;
+                                border-radius: 80px;
+
                         }
                 </style>
         </head>
 <body>
-        <input onkeyup="ReadInformation()" id="input" type="text">
-        <h1 id="result">Result</h1>
+        <table>
+                <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>age</th>
+                </tr>
+                <tr>
+                        <td>Vitor</td>
+                        <td>Nascimento Batista</td>
+                        <td>15</td>
+                </tr>
+                <tr>
+                        <td>Java</td>
+                        <td>script</td>
+                        <td>50</td>
+                </tr>
+        </table>
 </body>
 <script>
-function ReadInformation(){
-        var word = document.getElementById("input").value
-        var result = document.getElementbyId("result")
-        var alphabeto = "abcdefghijklmnopqrstuvwxyz".toUpperCase
-
-        window.alert(alphabeto)
-}
 </script>
 </html>
