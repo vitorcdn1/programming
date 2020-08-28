@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-nr">
-        <head>
-                <title>Table</title>
-                <meta charset="utf-8">
-                <style>
-                        body {
-                                text-align: center;
-                                background-color:aqua;
-                        }
-                        table, td, th {
-                                padding: 20px;
-                                font-size: 20pt;
-                                border: 2px solid black;
-                                border-radius: 80px;
-
-                        }
-                </style>
-        </head>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>table</title>
+		<style>
+			body {
+				background-color: black;
+				color: white;
+				text-align: center;
+			}
+			th {
+				font-size: 30pt;
+			}
+			table, th, td {
+				border: 1px solid white;
+				border-radius: 8px;
+				padding: 2px;
+			}	
+		</style>
+	</head>
 <body>
-        <table>
-                <tr>
-                        <th>Name</th>
-                        <th>Last Name</th>
-                        <th>age</th>
-                </tr>
-                <tr>
-                        <td>Vitor</td>
-                        <td>Nascimento Batista</td>
-                        <td>15</td>
-                </tr>
-                <tr>
-                        <td>Java</td>
-                        <td>script</td>
-                        <td>50</td>
-                </tr>
-        </table>
+	<h1>Test</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>LastName</th>
+			<th>Age</th>
+		</tr>
+		<tr>
+			<td>Vitor</td>
+			<td>Nascimento</td>
+			<td>15</td>
+		</tr>
+	</table>
+	
+	<hr>
+
+	<input onkeyup="Increase()" id="num1_entry" type="number">
+	<br>
+	<input onkeyup="Increase()" id="num2_entry" type="number">
+	<h1 id="result_h1">0</h1>
 </body>
 <script>
+	function Increase(){
+		var num1 = document.getElementById("num1_entry").value
+		var num2 = document.getElementById("num2_entry").value
+		var result = document.getElementById("result_h1")
+		var conta = num1 + num2
+
+		if (conta == NaN){
+			result.value = 0;
+		}
+		else{
+			result.value = conta
+		}
+
+	}
 </script>
 </html>
