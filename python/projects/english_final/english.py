@@ -1,11 +1,8 @@
 from tkinter import *
 from tkinter.messagebox import showwarning, showinfo
 from os import getcwd
-<<<<<<< Updated upstream
 
-=======
- 
->>>>>>> Stashed changes
+
 root = Tk()
 root.title("English")
 
