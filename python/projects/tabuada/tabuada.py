@@ -46,7 +46,7 @@ class Calculations:
 		self.option = option
 
 	def ShowMultipleTable(self):
-		
+		pass		
 		
 while True:
 	question = ReadOption(["Sair do programa","Mostrar uma tabuada"]) # Inicia a class ReadOption
@@ -58,5 +58,7 @@ while True:
 	if responce == 0:
 		break
 	else:
-		
-		
+		pass
+
+if __name__ == "__main__":
+	print("Hello World")	
