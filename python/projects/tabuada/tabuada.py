@@ -1,4 +1,6 @@
 import termcolor
+import os
+
 
 class ReadOption:
 	def __init__(self, option):
@@ -27,10 +29,12 @@ class ReadOption:
 					if responce in num_options:
 						return int(responce)
 					else:
+						os.system("clear")
 						print(termcolor.colored("Error Please type a valid option !!!!", "red"))
 						break
 
 				else:
+					os.system("clear")
 					print(termcolor.colored("Error Please Type a number !!!!", "red"))
 					break
 					
