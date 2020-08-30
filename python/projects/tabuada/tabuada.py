@@ -3,7 +3,9 @@ import os
 
 
 class ReadOption:
+
 	def __init__(self, option):
+		os.system("clear")
 		self.option = option
 
 	def PrintOption(self):
@@ -39,10 +41,22 @@ class ReadOption:
 					break
 					
 
+class Calculations:
+	def __init__(self, option):
+		self.option = option
 
+	def ShowMultipleTable(self):
+		
+		
 while True:
-	question = ReadOption(["Sair do programa","Learn"])
-	question.PrintOption() #Print the options
-	responce = question.ReadOption("Type a option: ")
+	question = ReadOption(["Sair do programa","Mostrar uma tabuada"]) # Inicia a class ReadOption
+
+	question.PrintOption() 						  # Print the options
+
+	responce = question.ReadOption("Type a option: ") 		  # 
+
 	if responce == 0:
 		break
+	else:
+		
+		
