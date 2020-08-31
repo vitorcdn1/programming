@@ -41,24 +41,34 @@ class ReadOption:
 					break
 					
 
-class Calculations:
+class Calculations(ReadOption):
 	def __init__(self, option):
 		self.option = option
 
 	def ShowMultipleTable(self):
-		pass		
-		
+
+		os.system("clear")
+		print(f"{'='*50} Multiple Table {'='*50}")
+
+		while True:
+			num_multiple = ReadOption("Digite uma tabuada: ")
+
+			print(f"{'='*50} Multiple Table of {num_multiple} {'='*50}")
+
+			for c in range(0,10):
+				print(f"{num_multiple} X {c} = {num_multiple * c}")
+	if option == 1:
+		ShowMultipleTable()
 while True:
 	question = ReadOption(["Sair do programa","Mostrar uma tabuada"]) # Inicia a class ReadOption
 
 	question.PrintOption() 						  # Print the options
 
 	responce = question.ReadOption("Type a option: ") 		  # 
-
+	conta = Calculations(responce)
 	if responce == 0:
 		break
 	else:
-		pass
+		conta = Calculations(responce)
 
-if __name__ == "__main__":
-	print("Hello World")	
+		
