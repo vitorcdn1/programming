@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int encrypt(string palavra){
+string* encrypt(string palavra){
 
 	string alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXZ";
 	int ReturnWord[palavra.length()];
@@ -29,7 +29,7 @@ int encrypt(string palavra){
                                 	}
                                 }
                                 
-                                ReturnWord[c] = aumentar;
+                                final_word[c] = aumentar;
                         }
                 }
 	}
@@ -39,7 +39,7 @@ int encrypt(string palavra){
 	}
 	
 	cout << endl;
-	return 0;
+	return final_word;
 }
 
 int main(){
