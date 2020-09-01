@@ -5,7 +5,7 @@ import os
 class ReadOption:
 
 	def __init__(self, option):
-		os.system("clear")
+		os.system("cls")
 		self.option = option
 
 	def PrintOption(self):
@@ -31,12 +31,12 @@ class ReadOption:
 					if responce in num_options:
 						return int(responce)
 					else:
-						os.system("clear")
+						os.system("cls")
 						print(termcolor.colored("Error Please type a valid option !!!!", "red"))
 						break
 
 				else:
-					os.system("clear")
+					os.system("cls")
 					print(termcolor.colored("Error Please Type a number !!!!", "red"))
 					break
 					
@@ -47,7 +47,7 @@ class Calculations(ReadOption):
 
 	def ShowMultipleTable(self):
 
-		os.system("clear")
+		os.system("cls")
 		print(f"{'='*50} Multiple Table {'='*50}")
 
 		while True:
@@ -57,8 +57,6 @@ class Calculations(ReadOption):
 
 			for c in range(0,10):
 				print(f"{num_multiple} X {c} = {num_multiple * c}")
-	if option == 1:
-		ShowMultipleTable()
 while True:
 	question = ReadOption(["Sair do programa","Mostrar uma tabuada"]) # Inicia a class ReadOption
 
