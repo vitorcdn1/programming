@@ -113,7 +113,7 @@ def PracticeMultipleTable():
 	pass
 				
 def LearnMultipleTable():
-	while True:
+	pass
 		
 
 while True:
@@ -133,3 +133,7 @@ while True:
 		break
 	if res == 1:
 		ShowMultipleTable()
+	if res == 2:
+		PracticeMultipleTable()
+	if res == 3:
+		LearnMultipleTable()
