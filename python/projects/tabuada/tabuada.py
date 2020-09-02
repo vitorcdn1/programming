@@ -94,23 +94,33 @@ def ShowMultipleTable():
 			break
 		else:
 			while True:
-				print("If you wish exit type Ctrl-C ...")
-				num_tabuada = option.ReadInt("Type a number to show a multiple table: ")
+				print("If you wish exit type \"clear\" ...")
+				num_tabuada = input("Type a number to show a multiple table: ")
 				
-				for c in range(0,10):
-					print(f"{num_tabuada} X {c} = {num_tabuada * c}")
+				if num_tabuada.isnumeric() == False:
+					if num_tabuada == "clear":
+						clear()
+					elif num_tabuada == "exit":
+						break
+					else:
+						print(termcolor.colored("Error Type a integer number", "red"))
+						
+				else:
+					for c in range(0,10):
+						print(f"{num_tabuada} X {c} = {int(num_tabuada) * c}")
 		
-
-
-
-			for c in range(0,10):
-				print(f"{num_multiple} X {c} = {num_multiple * c}")
+def PracticeMultipleTable():
+	pass
+				
+def LearnMultipleTable():
+	while True:
+		
 
 while True:
 
 	table = Table("Multiple Table", "=", 30)
 	
-	option = ReadOption(["Exit program","Show Multiple Table"])
+	option = ReadOption(["Exit program","Show Multiple Table", "Practice Multiple Table", "Learn Multiple Table"])
 	
 	table.ShowTitle()
 	option.ShowOptions()
