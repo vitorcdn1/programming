@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	
+	string something;
+	
+	cout << "Type something: ";
+	cin something;
+	
+	cout << isdigit(something[0]);
+	
+	return 0;
+}
