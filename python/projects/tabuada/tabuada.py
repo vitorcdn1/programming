@@ -28,10 +28,9 @@ class Table:
 class ReadOption:
 	
 	def __init__(self, option):
-<<<<<<< HEAD
-=======
-		os.system("cls")
->>>>>>> 7cd33aa50d87e6fee9ae230fab3013350f4798b7
+
+		clear()
+
 		self.option = option
 
 	def ShowOptions(self):
@@ -54,7 +53,7 @@ class ReadOption:
 					if str(responce) in numlist:
 						return int(responce)
 					else:
-<<<<<<< HEAD
+
 						clear()
 						print(termcolor.colored("Erro digite uma opção valida !!", "red"))
 						break
@@ -64,37 +63,17 @@ class ReadOption:
 				break
 				
 	def ReadInt(self,pergunta):
-=======
-						os.system("cls")
-						print(termcolor.colored("Error Please type a valid option !!!!", "red"))
-						break
 
-				else:
-					os.system("cls")
-					print(termcolor.colored("Error Please Type a number !!!!", "red"))
-					break
+				while True:
+					responce = input(pergunta)
 					
-
-class Calculations(ReadOption):
-	def __init__(self, option):
-		self.option = option
-
-	def ShowMultipleTable(self):
-
-		os.system("cls")
-		print(f"{'='*50} Multiple Table {'='*50}")
-
->>>>>>> 7cd33aa50d87e6fee9ae230fab3013350f4798b7
-		while True:
-			responce = input(pergunta)
-			
-			if responce.isnumeric() == True:
-				return int(responce)
-			else:
-				clear()
-				print(termcolor.colored("Error Type a number !!!", "red"))
-				break
-
+					if responce.isnumeric() == True:
+						return int(responce)
+					else:
+						clear()
+						print(termcolor.colored("Error Type a number"))
+						break
+					
 #Funções de calculo do programa
 	
 def ShowMultipleTable():
@@ -122,18 +101,18 @@ def ShowMultipleTable():
 					print(f"{num_tabuada} X {c} = {num_tabuada * c}")
 		
 
-<<<<<<< HEAD
-=======
+
+
 			for c in range(0,10):
 				print(f"{num_multiple} X {c} = {num_multiple * c}")
->>>>>>> 7cd33aa50d87e6fee9ae230fab3013350f4798b7
+
 while True:
 
 	table = Table("Multiple Table", "=", 30)
-
-	table.ShowTitle()
 	
 	option = ReadOption(["Exit program","Show Multiple Table"])
+	
+	table.ShowTitle()
 	option.ShowOptions()
 	
 	table.CloseTitle()
