@@ -2,6 +2,7 @@ import os
 import termcolor
 import platform
 
+
 def clear():
 	if platform.system() == "Linux":
 		os.system("clear")
@@ -100,8 +101,10 @@ def ShowMultipleTable():
 				if num_tabuada.isnumeric() == False:
 					if num_tabuada == "clear":
 						clear()
+						
 					elif num_tabuada == "exit":
 						break
+						
 					else:
 						print(termcolor.colored("Error Type a integer number", "red"))
 						
