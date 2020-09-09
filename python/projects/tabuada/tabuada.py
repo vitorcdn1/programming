@@ -93,7 +93,8 @@ def ShowMultipleTable():
 			break
 		else:
 			while True:
-				print("If you wish exit type \"clear\" ...")
+				print("If you wish to clear type \"clear\" ...")
+				print("If you wish to exit type \"exit\" ...")
 				num_tabuada = input("Type a number to show a multiple table: ")
 				
 				if num_tabuada.isnumeric() == False:
@@ -107,8 +108,15 @@ def ShowMultipleTable():
 						print(termcolor.colored("Error Type a integer number", "red"))
 						
 				else:
+
+					table = Table(f" tabuada do {num_tabuada}", "=", 20)
+
+					table.ShowTitle()
+
 					for c in range(0,10):
 						print(f"{num_tabuada} X {c} = {int(num_tabuada) * c}")
+
+					table.CloseTitle()
 		
 def PracticeMultipleTable():
 	pass
