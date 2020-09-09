@@ -30,8 +30,6 @@ class ReadOption:
 	
 	def __init__(self, option):
 
-		clear()
-
 		self.option = option
 
 	def ShowOptions(self):
