@@ -1,7 +1,14 @@
 from random import randint, choice
 from termcolor import colored
 from os import system
+import platform
 
+def clear():
+
+	if platform.system() == "Windows":
+		os.system("cls")
+	else:
+		os.system("clear")
 
 alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -28,7 +35,7 @@ def ReadYesNo(question):
 
 while True:
 	
-	system("clear")
+	clear()
 	print(f"{'-'*10} Create Random Words  {'-'*10}")
 	print("Write (yes/no) to generate the word")
 
