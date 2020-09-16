@@ -1,7 +1,8 @@
 from random import randint, choice
 from termcolor import colored
-from os import system
+import os
 import platform
+from ReadOption import Table, ReadOption
 
 def clear():
 
@@ -9,6 +10,8 @@ def clear():
 		os.system("cls")
 	else:
 		os.system("clear")
+
+clear()
 
 alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -35,13 +38,19 @@ def ReadYesNo(question):
 
 while True:
 	
-	clear()
-	print(f"{'-'*10} Create Random Words  {'-'*10}")
-	print("Write (yes/no) to generate the word")
+	table = Table("Create random password and phrases", "=", 10)
+	option = ReadOption([
+		"Exit program",
+		"Generate random phrase"
+	])
 
-	lower = ReadYesNo("Do you want LowerCase in your password: ")
-	upper = ReadYesNo("Do you want UpperCase in your password: ")
-	numbers = ReadYesNo("Do you want numbers in your password: ")
+	table.ShowTitle()
 
-	word(lower, upper, numbers)
-	input("press return to generate a new word...")
+	option.ShowOption()
+
+	table.CloseTitle()
+
+	responce = option.ReadOption("Type a option: ")
+
+	if responce == 0:
+		break
