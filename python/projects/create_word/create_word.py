@@ -1,40 +1,14 @@
-from random import randint, choice
-from termcolor import colored
+import termcolor
 import os
 import platform
-from ReadOption import Table, ReadOption
 
-def clear():
+from ReadOption import Table, ReadOption, clear, GeneratePass
 
-	if platform.system() == "Windows":
-		os.system("cls")
-	else:
-		os.system("clear")
 
 clear()
 
 alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def word(num=True,lower=True,upper=True):
-
-	if num == False and lower == False and upper == False:
-		print(colored("ERROR !!! All of the are false", "red"))
-
-	return_list = list()
-
-	
-def ReadYesNo(question):
-
-	while True:
-
-		result = input(question)
-		if result == "yes":
-			return True
-		elif result == "no":
-			return False
-		else:
-			error_menssage = colored("Error do you type (yes/no)", 'red')
-			print(error_menssage)
 
 while True:
 	
@@ -54,3 +28,36 @@ while True:
 
 	if responce == 0:
 		break
+
+	if responce == 1:
+		clear()
+
+		while True:
+
+			table = Table("Generate rando phrase", "=", 10)
+
+			option = ReadOption([
+				"Back to menu",
+				"Generate a single password",
+				"Generate more than one password",
+				"Generate passwords to a file"
+			])
+
+			table.ShowTitle()
+
+			option.ShowOption()
+
+			table.CloseTitle()
+
+			responce = option.ReadOption("Type a option: ")
+
+			if responce == 0:
+				clear()
+				break
+			if responce == 1:
+				print(GeneratePass())
+				pass
+			if responce == 2:
+				pass
+			if responce == 3:
+				pass

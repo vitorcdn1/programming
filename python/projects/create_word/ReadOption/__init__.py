@@ -1,3 +1,5 @@
+from random import randint, choice
+
 import termcolor
 import os
 import platform
@@ -65,3 +67,39 @@ class ReadOption:
 					clear()
 					print(termcolor.colored("Error type a integer number !!!", "red"))
 					break
+
+def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
+
+	alphabeto = "abcdefghijklmnopqrstuvwxyz"
+
+	if lower and upper and num == False:
+		print(termcolor.colored("Error all options are false"))
+
+	else:
+		return_list = list()
+		size = len(return_list)
+
+		while size != tamanho:
+
+			while True:
+
+				x = randint(0, 3)
+
+				if x == 0:
+					if lower == True:
+						return_list.append(choice(alphabeto))
+						break
+				if x == 1:
+					if upper == True:
+						return_list.append(choice(alphabeto.upper()))
+						break
+				if x == 2:
+					if num == True:
+						return_list.append(str(randint(0, 9)))
+						break
+
+			size = len(return_list)
+
+	return "".join(return_list)
+
+
