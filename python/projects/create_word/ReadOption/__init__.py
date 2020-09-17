@@ -68,6 +68,20 @@ class ReadOption:
 					print(termcolor.colored("Error type a integer number !!!", "red"))
 					break
 
+	def ReadBool(self, pergunta, true = "yes", false = "no"):
+		while True:
+			responce = input(pergunta)
+
+			if responce in [true, false]:
+
+				if responce == true:
+
+					return True
+			else:
+				clear()
+				print(termcolor.colored(f"Error type {true}/{false} !!!", "red"))
+				break
+
 def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 
 	alphabeto = "abcdefghijklmnopqrstuvwxyz"
@@ -100,4 +114,4 @@ def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 
 			size = len(return_list)
 
-	return "".join(return_list)
+	return termcolor.colored("".join(return_list), "green")

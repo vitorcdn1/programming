@@ -11,7 +11,7 @@ alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 
 while True:
-	
+
 	table = Table("Create random password and phrases", "=", 10)
 	option = ReadOption([
 		"Exit program",
@@ -34,7 +34,7 @@ while True:
 
 		while True:
 
-			table = Table("Generate rando phrase", "=", 10)
+			table = Table("Generate random phrase", "=", 10)
 
 			option = ReadOption([
 				"Back to menu",
@@ -55,7 +55,15 @@ while True:
 				clear()
 				break
 			if responce == 1:
-				print(GeneratePass())
+				clear()
+				
+				siz = option.ReadOption("What's the size of the pass that you want to generate: ")
+				ynl = option.ReadBool(pergunta = "Do You want lowercase in your pass: ", true = "yes", false = "no")
+				ynu = option.ReadBool(pergunta = "Do You want uppercase in your pass: ", true = "yes", false = "no")
+				ynn = option.ReadBool(pergunta = "Do you want number in your pass: ", true = "yes", false = "no")
+
+				print(GeneratePass(tamanho = siz, lower = ynl, upper = ynu, num = ynn))
+
 				pass
 			if responce == 2:
 				pass
