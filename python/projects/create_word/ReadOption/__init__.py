@@ -72,7 +72,7 @@ def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 
 	alphabeto = "abcdefghijklmnopqrstuvwxyz"
 
-	if lower and upper and num == False:
+	if lower == False and upper == False and num == False:
 		print(termcolor.colored("Error all options are false"))
 
 	else:
@@ -101,5 +101,3 @@ def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 			size = len(return_list)
 
 	return "".join(return_list)
-
-
