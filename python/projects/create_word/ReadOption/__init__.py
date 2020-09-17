@@ -28,7 +28,7 @@ class Table:
 
 class ReadOption:
 
-	def __init__(self, option = list()):
+	def __init__(self, option = []):
 		self.option = option
 
 
@@ -47,7 +47,7 @@ class ReadOption:
 				else:
 					clear()
 					print(termcolor.colored("Error type a real number", "red"))
-					break
+
 		else:
 			num_option = list()
 
@@ -77,10 +77,13 @@ class ReadOption:
 				if responce == true:
 
 					return True
+				if responce == false:
+
+					return False
 			else:
 				clear()
 				print(termcolor.colored(f"Error type {true}/{false} !!!", "red"))
-				break
+
 
 def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 

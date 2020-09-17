@@ -56,13 +56,18 @@ while True:
 				break
 			if responce == 1:
 				clear()
-				
-				siz = option.ReadOption("What's the size of the pass that you want to generate: ")
-				ynl = option.ReadBool(pergunta = "Do You want lowercase in your pass: ", true = "yes", false = "no")
-				ynu = option.ReadBool(pergunta = "Do You want uppercase in your pass: ", true = "yes", false = "no")
-				ynn = option.ReadBool(pergunta = "Do you want number in your pass: ", true = "yes", false = "no")
 
-				print(GeneratePass(tamanho = siz, lower = ynl, upper = ynu, num = ynn))
+				while True:
+
+					option = ReadOption()
+
+					siz = option.ReadOption("What's the size of the pass that you want to generate: ")
+					ynl = option.ReadBool(pergunta = "Do You want lowercase in your pass: ", true = "yes", false = "no")
+					ynu = option.ReadBool(pergunta = "Do You want uppercase in your pass: ", true = "yes", false = "no")
+					ynn = option.ReadBool(pergunta = "Do you want number in your pass: ", true = "yes", false = "no")
+
+					print(GeneratePass(tamanho = siz, lower = ynl, upper = ynu, num = ynn))
+					break
 
 				pass
 			if responce == 2:
