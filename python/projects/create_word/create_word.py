@@ -1,14 +1,7 @@
-import termcolor
-import os
-import platform
-
 from ReadOption import Table, ReadOption, clear, GeneratePass
 
 
 clear()
-
-alphabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
 
 while True:
 
@@ -71,6 +64,22 @@ while True:
 
 				pass
 			if responce == 2:
-				pass
+				clear()
+
+				while True:
+
+					option = ReadOption()
+
+					times = option.ReadOption("How much pass do you want to create: ")
+					siz = option.ReadOption("What's the size of the pass that you want to generate: ")
+					ynl = option.ReadBool("Do you want lowercase in your pass: ", true = "yes", false = "no")
+					ynu = option.ReadBool("Do you want uppercase in your pass: ", true = "yes", false = "no")
+					ynn = option.ReadBool("Do you want number in your pass: ", true = "yes", false = "no")
+
+					for c in range(0, times):
+						print(GeneratePass(tamanho = siz, lower = ynl, upper = ynu, num = ynn))
+
+					break
+
 			if responce == 3:
 				pass

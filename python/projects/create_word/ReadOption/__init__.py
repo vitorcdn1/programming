@@ -88,6 +88,7 @@ class ReadOption:
 def GeneratePass(tamanho = 10, lower = True, upper = True, num = True):
 
 	alphabeto = "abcdefghijklmnopqrstuvwxyz"
+	symbols = "!@#$%&*()-_=/*-+,;?^}[´~"
 
 	if lower == False and upper == False and num == False:
 		print(termcolor.colored("Error all options are false"))
